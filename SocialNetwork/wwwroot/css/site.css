@@ -1,39 +1,146 @@
-﻿body {
+﻿/* ------------------------------------ */
+/* Layout */
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
-}
-
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
-
-/* QR code generator */
-#qrCode {
-    margin: 15px;
-}
-
-.login-module {
     background: black;
 }
 
+.body-content {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.bottom-footer {
+    background: black;
+    color: white;
+}
+
+/* ------------------------------------ */
+/* Layout: navbar */
+
+.navbar-fixed-top {
+    background: #3A5894;
+    border: none;
+    border-bottom: 1px solid #2d4472;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+    .navbar-inverse .navbar-brand:hover {
+        color: #00ffff;
+        text-shadow: 2px 2px black;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover {
+    text-decoration: underline;
+    background: none;
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    background: none;
+    color: white;
+}
+
+
+
+
+/* ------------------------------------ */
+/* Index */
+
+.content-header {
+}
+
+.content-window {
+}
+
+/* ------------------------------------ */
+/* Presentation video */
+
+.presentation-panel {
+    position: fixed;
+    z-index: 110;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(to right, rgba(0,0,0,0.0), rgba(0,0,0,0.9), black, black);
+}
+
+.bg-video-container {
+    overflow: hidden;
+}
+
+    .bg-video-container video {
+        position: relative;
+        z-index: 100;
+        bottom: 100px;
+        right: 10%;
+        width: 100%;
+    }
+
+/*video.fade-in {
+    opacity: 1;
+    transition: none;
+}*/
+
+/* ------------------------------------ */
+/* Login */
+
+.login-module {
+    position: fixed;
+    bottom: 0;
+    z-index: 200;
+    width: 100%;
+    height: 450px;
+    color: white;
+}
+
+    .login-module h1 {
+        font-size: 90px;
+        text-shadow: 0 3px 3px black;
+    }
+
+    .login-module p {
+        font-size: 25px;
+        text-shadow: 0 1px 1px black;
+    }
+
+    .login-module input {
+        color: black;
+        margin-bottom: 5px;
+    }
+
+.login-panel {
+    display: flex;
+}
+
+    .login-panel .content-panel {
+        width: 60%;
+    }
+
+    .login-panel .responsive-padding {
+        width: 20%;
+    }
+
+
+
+
+
+/* ------------------------------------ */
+/* Smaller screens */
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+    
 }

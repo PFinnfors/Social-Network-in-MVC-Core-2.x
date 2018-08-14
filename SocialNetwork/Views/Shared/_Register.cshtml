@@ -1,24 +1,28 @@
 ﻿@model SocialNetwork.Models.AuthModels.RegisterModel
 
-<div class="register-module">
-    <div class="jumbotron register-panel">
-        <h1>NOT FACEBOOK</h1>
-        <h2>Register to Not Facebook!</h2>
+<div class="login-module">
 
-        <form class="login-form" method="post">
+    <div class="login-panel">
 
-            <div class="input-group">
-                <label for="Email">Email: </label>
-                <input name="Email" type="email" placeholder="email" />
+        <div class="responsive-padding"></div>
+
+        <div class="content-panel text-center center-block">
+
+            <h1>A Social Network</h1>
+            <p>Register your account, or <a href="#" onclick="replace_content(this)" data-url="/auth/_login">login</a> today!</p>
+
+            <div>
+                <form class="login-form" method="post">
+                    <input name="Email" type="email" placeholder="email" class="input-lg" /><br />
+                    <input name="Password" type="password" placeholder="password" class="input-lg" /><br />
+                    <input name="ConfirmPassword" type="password" placeholder="password" class="input-lg" />
+                </form>
             </div>
 
-            <div class="input-group">
-                <label for="Password">Password: </label>
-                <input name="Password" type="password" placeholder="password" />
-            </div>
+        </div>
 
-            <input name="ConfirmPassword" type="password" placeholder="password" />
+        <div class="responsive-padding"></div>
 
-        </form>
     </div>
+
 </div>
