@@ -1,0 +1,19 @@
+﻿@model SocialNetwork.Models.AuthModels.LoginModel
+
+<div class="login-module">
+    <div class="jumbotron login-panel">
+        <h1>NOT FACEBOOK</h1>
+        <h2>Log in or <a href="#" onclick="load_register(this)" class="replace-link" data-url="/auth/_register">create an account</a> today!</h2>
+
+        <form class="login-form" method="post">
+            <div class="input-group">
+                <label for="Email">Email: </label>
+                <input name="Email" type="email" placeholder="email" />
+            </div>
+            <div class="input-group">
+                <label for="Password">Password: </label>
+                <input name="Password" type="password" placeholder="password" />
+            </div>
+        </form>
+    </div>
+</div>
