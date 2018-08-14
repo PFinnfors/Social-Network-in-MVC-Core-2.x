@@ -9,13 +9,23 @@
         <div class="content-panel text-center center-block">
 
             <h1>A Social Network</h1>
-            <p>Login or <a href="#" onclick="replace_content(this)" data-url="/auth/_register">register an account</a> now!</p>
+            <p>Login or <a href="#" onclick="replace_content(this)" data-url="/auth/_register">register an account</a> today!</p>
 
+            @{
+                var emailValidationClass = ViewContext.ViewData.ModelState.GetFieldValidationState("Email").ToString().ToLower();
+                var passValidationClass = ViewContext.ViewData.ModelState.GetFieldValidationState("Password").ToString().ToLower();
+            }
             <div>
                 <form class="login-form" method="post">
-                    <input name="Email" type="email" placeholder="email" class="input-lg" />
-                    <input name="Password" type="password" placeholder="password" class="input-lg" />
+                    <input name="Email" type="email" value="@Model.Email" placeholder="email" class="input-lg @if (Model.IsPost) { @emailValidationClass }" />
+                    <input name="Password" type="password" value="@Model.Password" placeholder="password" class="input-lg @if (Model.IsPost) { @passValidationClass }" />
                 </form>
+                <div class="validation-messages">
+                    @if (Model.IsPost)
+                    {
+                        @Html.ValidationSummary()
+                    }
+                </div>
             </div>
 
         </div>

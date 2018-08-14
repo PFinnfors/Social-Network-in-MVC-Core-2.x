@@ -9,14 +9,30 @@
         <div class="content-panel text-center center-block">
 
             <h1>A Social Network</h1>
-            <p>Register your account, or <a href="#" onclick="replace_content(this)" data-url="/auth/_login">login</a> today!</p>
+            <p>Register your account, or <a href="#" onclick="replace_content(this)" data-url="/auth/_login">login</a> now!</p>
 
+            @{
+                var emailValidationClass = (Model.IsPost) ?
+                    ViewContext.ViewData.ModelState.GetFieldValidationState("Email").ToString().ToLower() : String.Empty;
+
+                var passValidationClass = (Model.IsPost) ?
+                    ViewContext.ViewData.ModelState.GetFieldValidationState("Password").ToString().ToLower() : String.Empty;
+
+                var confValidationClass = (Model.IsPost) ?
+                    ViewContext.ViewData.ModelState.GetFieldValidationState("ConfirmPassword").ToString().ToLower() : String.Empty;
+            }
             <div>
                 <form class="login-form" method="post">
-                    <input name="Email" type="email" placeholder="email" class="input-lg" /><br />
-                    <input name="Password" type="password" placeholder="password" class="input-lg" /><br />
-                    <input name="ConfirmPassword" type="password" placeholder="password" class="input-lg" />
+                    <input name="Email" type="email" value="@Model.Email" placeholder="email" class="input-lg @emailValidationClass" /><br />
+                    <input name="Password" type="password" value="@Model.Password" placeholder="password" class="input-lg @passValidationClass" /><br />
+                    <input name="ConfirmPassword" type="password" value="@Model.ConfirmPassword" placeholder="password" class="input-lg @confValidationClass" />
                 </form>
+                <div class="validation-messages">
+                    @if (Model.IsPost)
+                    {
+                        @Html.ValidationSummary()
+                    }
+                </div>
             </div>
 
         </div>

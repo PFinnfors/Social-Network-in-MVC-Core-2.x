@@ -17,6 +17,10 @@ body {
     color: white;
 }
 
+.invalid {
+    border: 5px solid red;
+}
+
 /* ------------------------------------ */
 /* Layout: navbar */
 
@@ -105,6 +109,8 @@ body {
     width: 100%;
     height: 450px;
     color: white;
+    background: none;
+    background: rgba(0,0,0,0.4);
 }
 
     .login-module h1 {
@@ -120,6 +126,13 @@ body {
     .login-module input {
         color: black;
         margin-bottom: 5px;
+    }
+
+    .login-module .validation-messages ul {
+        list-style: none;
+        padding: 0;
+        color: red;
+        text-shadow: 0 1px 1px black;
     }
 
 .login-panel {

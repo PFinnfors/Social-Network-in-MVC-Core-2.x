@@ -10,5 +10,7 @@ namespace SocialNetwork.Models.AuthModels
         public string Password { get; set; }
         [Required]
         public string ConfirmPassword { get; set; }
+
+        public bool IsPost { get; set; }
     }
 }
