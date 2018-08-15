@@ -36,7 +36,7 @@ $(document).keyup(function (e) {
             return false;
         }
     }
-})
+});
 
 function replace_content(elem) {
 

@@ -18,7 +18,7 @@ body {
 }
 
 .invalid {
-    border: 5px solid red;
+    border: 3px solid red;
 }
 
 /* ------------------------------------ */
@@ -107,10 +107,12 @@ body {
     bottom: 0;
     z-index: 200;
     width: 100%;
-    height: 450px;
+    height: 50%;
     color: white;
     background: none;
     background: rgba(0,0,0,0.4);
+    -webkit-transition: height 2s, background-color 3s; /* For Safari 3.1 to 6.0 */
+    transition: height 2s, background-color 3s;
 }
 
     .login-module h1 {
@@ -147,7 +149,10 @@ body {
         width: 20%;
     }
 
-
+.redirect-panel div {
+    height: 300px;
+    width: 300px;
+}
 
 
 
@@ -155,5 +160,4 @@ body {
 /* Smaller screens */
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
-    
 }

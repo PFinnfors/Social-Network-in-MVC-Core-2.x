@@ -1,0 +1,33 @@
+﻿@model SocialNetwork.Models.Database.SocialUser
+@{
+    var greetName = (Model.FirstName != null) ? Model.FirstName : Model.Email;
+    var imageUrl = (Model.ImageUrl != null) ? Model.ImageUrl : "/images/avatar-1577909_960_720.png";
+}
+<script>
+
+    $(".login-module").css("height", "95%");
+    $(".login-module").css("background-color", "black");
+
+</script>
+<div class="login-module">
+
+    <div class="login-panel">
+
+        <div class="responsive-padding"></div>
+
+        <div class="content-panel redirect-panel text-center center-block">
+
+            <h1>A Social Network</h1>
+            <h2>Welcome, @greetName!</h2>
+            <p>If this screen doesn't change for a while,  click <a href="#" onclick="replace_content(this)" data-url="/auth/_profile">here</a> to continue.</p>
+            <hr />
+            <div class="center-block">
+                <img src="@imageUrl" class="img-responsive" />
+            </div>
+        </div>
+
+        <div class="responsive-padding"></div>
+
+    </div>
+
+</div>
